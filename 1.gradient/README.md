@@ -23,10 +23,10 @@ This exercise is to show how use gradient to change weight
     We define   
     
         loss = (question * w - answer) ** 2, 
-    so the gradient of this is   
+    so the gradient of this loss is   
     
         2 * (question * w - answer) * question. 
-    To find the min of this function, we just let   
+    To find the min of the loss, we just upgrade weight  
     
         w = w - grad * lr.
 * useful trick   
