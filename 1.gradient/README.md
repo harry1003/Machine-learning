@@ -30,7 +30,7 @@ This exercise is to show how use gradient to change weight
         w = w - grad * lr.
 * useful trick   
     Some tricks is used in this work.  
-    We normalize the value of the input so that it can converge more faster.  
-    Besides, we use adagrad, so that the value of lr can adjust itself to some extent.   
-    However, if you didn't use this tech, you have to be careful to choose your lr.   
-    If your lr is too big, it will diverge.  
+    1. We normalize the value of the input so that it can converge more faster.  
+    2. Besides, we use adagrad, so that the value of lr can adjust itself to some extent.   
+        However, if you didn't use this tech, you have to be careful to choose your lr.   
+        If your lr is too big, it will diverge.  
