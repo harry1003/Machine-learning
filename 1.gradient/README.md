@@ -15,9 +15,9 @@ This exercise is to show how use gradient to change weight
         python predict.py
 
 * What is gradient?  
-    Gradient descent is widely used in maching learning.  
-    The concept is find the gradient of loss, and then go backward.  
-    So, the loss can reach a local min, where may have a good result.  
+    > Gradient descent is widely used in maching learning.  
+    > The concept is find the gradient of loss, and then go backward.  
+    > So, the loss can reach a local min, where may have a good result.  
     In this example, we just use one layer weight to try to predict PM2.5.  
     We define   
     
@@ -33,4 +33,4 @@ This exercise is to show how use gradient to change weight
     1. We normalize the value of the input so that it can converge more faster.  
     2. Besides, we use adagrad, so that the value of lr can adjust itself to some extent.   
         However, if you didn't use this tech, you have to be careful to choose your lr.   
-        If your lr is too big, it will diverge.  
+        If your lr is too big, loss will diverge.  
