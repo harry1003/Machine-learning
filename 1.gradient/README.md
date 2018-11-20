@@ -7,8 +7,12 @@
 
 # Gradient  
 This exercise is to show how use gradient to change weight
-* run python train.py to see how we train weight
-* run python predict.py to predict test.csv, answer will save in ./result
+* run below to see how we train weight
+
+        python train.py 
+* run below to predict test.csv, answer will save in ./result
+
+        python predict.py
 
 * What is gradient?  
     Gradient descent is widely used in maching learning.  
