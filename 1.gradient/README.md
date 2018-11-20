@@ -3,13 +3,12 @@
     (eg. SO2, PM2.5, PM2...) in first 9 hrs, and you have to predict the value of 
     PM2.5 in the 10th hr.
 
-# Gradient
+# Gradient  
 This exercise is to show how use gradient to change weight
 * run python train.py to see how we train weight
 * run python predict.py to predict test.csv, answer will save in ./result
 
-* What is gradient?
-
+* What is gradient?  
     Gradient descent is widely used in maching learning.  
     The concept is find the gradient of loss, and then go backward.  
     So, the loss can go to a local min, where may have a good result.  
