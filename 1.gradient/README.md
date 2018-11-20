@@ -11,7 +11,7 @@ This exercise is to show how use gradient to change weight
 * What is gradient?  
     Gradient descent is widely used in maching learning.  
     The concept is find the gradient of loss, and then go backward.  
-    So, the loss can go to a local min, where may have a good result.  
+    So, the loss can reach a local min, where may have a good result.  
     In this example, we just use one layer weight to try to predict PM2.5.  
     We define   
     
