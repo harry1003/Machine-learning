@@ -1,6 +1,8 @@
 # Task description
-> This task is to predict PM2.5 value. We will give you the value of some features
-    (eg. SO2, PM2.5, PM2...) in first 9 hrs, and you have to predict the value of 
+> This task is to predict PM2.5 value.  
+    We will give you the value of some features
+    (eg. SO2, PM2.5, PM2...) in first 9 hrs,   
+    and you have to predict the value of 
     PM2.5 in the 10th hr.
 
 # Gradient  
