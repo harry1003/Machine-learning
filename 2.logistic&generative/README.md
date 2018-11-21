@@ -10,8 +10,8 @@ This exercise is to show how use logistic model to predict
 
 * What is logistic?  
     > Very similiar with task in (1.gradient).    
-    > But, this time we are going to predict a probability(0~1).    
-    > To transform the output from R->(0~1) we add a sigmoid function   
+    > But, this time we are going to predict a probability(0/~1).    
+    > To transform the output from R->(0/~1) we add a sigmoid function   
     > to it, just define at below.   
     
         sig(z) = 1 / (1 + np.exp(-z))

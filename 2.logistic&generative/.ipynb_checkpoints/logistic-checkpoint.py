@@ -3,7 +3,7 @@ import numpy as np
 from data import train_data_loader
 
 
-def train(epochs=1000, batch_size=100, lr=0.0001):
+def train(epochs=1000, batch_size=100, lr=0.001):
     d_l = train_data_loader()
     data, label = d_l.get_all_data()
     # init weight
@@ -20,7 +20,7 @@ def train(epochs=1000, batch_size=100, lr=0.0001):
     np.save("lg_weight.npy", weight)
     
     
-def train_on_batch(data, label, weight, lr, loss_f="SGD"):
+def train_on_batch(data, label, weight, lr, loss_f="cross_entropy"):
     pre = np.dot(data, weight)
     pre = sigmoid(pre)
     delta = 2.22044604925e-16
@@ -29,7 +29,15 @@ def train_on_batch(data, label, weight, lr, loss_f="SGD"):
     if loss_f == "SGD":
         loss = pre - label
         grad = np.dot(data.T, loss)
-        weight = weight - grad * lr    
+        weight = weight - grad * lr   
+    if loss_f == "cross_entropy":
+        d1 = pre * (1 - pre) * data
+        d2 = -1 * pre * (1 - pre) * data
+        a1 = label / (pre + delta)
+        a2 = (1 - label) / (1 - pre + delta)
+        grad = -1 * (np.dot(d1.T, a1) + np.dot(d2.T, a2))
+        weight = weight - grad * lr
+        
     return cross_entropy, weight
     
     
