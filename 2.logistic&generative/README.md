@@ -1,7 +1,7 @@
 # Task description
 > Given you people's data with features(127), and you have to predict   
 > if their income is over 50k
-- - -
+
 # Logistic
 This exercise is to show how use logistic model to predict
 * run below to see how we train
@@ -24,15 +24,16 @@ This exercise is to show how use logistic model to predict
         
         pre = sig(data * w)    
     > for SGD:    
-    >    
-    >    loss = (pre - lable) ** 2, 
+        
+        loss = (pre - lable) ** 2, 
     > so the gradient of this loss is     
-    >
-    >    grad = 2 * (pre - lable) * data 
-    for cross_entrophy:         
+    
+        grad = 2 * (pre - lable) * data 
+        
+    > for cross_entrophy:         
         
         loss = -1 * (label * log(pre) + (1 - label) * np.log(1 - pre))
-    so the gradient of this loss is     
+    > so the gradient of this loss is     
         
         d_pre = d(pre)/dw = d(sig(data * w))/dw = pre * (1 - pre) * data
         grad = -1 * (label / pre * d_pre - (1 - label) / (1 - pre) * d_pre)
@@ -45,5 +46,5 @@ This exercise is to show how use logistic model to predict
     2. When applying sigmoid, you have to clip the value or it will diverge.  
 * future work    
     adagrad  
-- - -
+
     
