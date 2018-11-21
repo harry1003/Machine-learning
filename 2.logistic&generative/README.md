@@ -23,13 +23,13 @@ This exercise is to show how use logistic model to predict
     We define 2 kind of loss, SGD and cross_entrophy.   
         
         pre = sig(data * w)    
-    **for SGD:    
-        
-        loss = (pre - lable) ** 2, 
-    so the gradient of this loss is     
-    
-        grad = 2 * (pre - lable) * data 
-    **for cross_entrophy:         
+    > for SGD:    
+    >    
+    >    loss = (pre - lable) ** 2, 
+    > so the gradient of this loss is     
+    >
+    >    grad = 2 * (pre - lable) * data 
+    for cross_entrophy:         
         
         loss = -1 * (label * log(pre) + (1 - label) * np.log(1 - pre))
     so the gradient of this loss is     
