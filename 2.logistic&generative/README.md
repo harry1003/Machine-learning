@@ -20,15 +20,15 @@ This exercise is to show how use logistic model to predict
     
     In this example, we just use one layer weight to try to predict. We use     
     gradient desent again, so that      
-    We define 2 kind of loss, SGD and cross_entrophy.   
+    We define 2 kind of loss, MSE and Cross_entrophy.   
         
         pre = sig(data * w)    
-    > for SGD:    
+    > for MSE:    
         
         loss = (pre - lable) ** 2, 
         grad = 2 * (pre - lable) * data 
         
-    > for cross_entrophy:         
+    > for Cross_entrophy:         
         
         loss = -1 * (label * log(pre) + (1 - label) * np.log(1 - pre))
         d_pre = d(pre)/dw = d(sig(data * w))/dw = pre * (1 - pre) * data
