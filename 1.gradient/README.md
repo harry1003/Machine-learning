@@ -1,12 +1,7 @@
-# Task description
-> This task is to predict PM2.5 value.  
-    We will give you the value of some features
-    (eg. SO2, PM2.5, PM2...) in first 9 hrs,   
-    and you have to predict the value of 
-    PM2.5 in the 10th hr.
-
-# Gradient  
-This exercise is to show how use gradient to change weight
+## Prediction of PM2.5  
+# How to use this code?
+This exercise is to show how to use Gradient Descent to optimize the 
+weight in the model.
 * run below to see how we train weight
 
         python train.py 
@@ -14,7 +9,16 @@ This exercise is to show how use gradient to change weight
 
         python predict.py
 
-* What is gradient?  
+# Task description
+This task is to predict PM2.5 value.   
+We will give you the value of some features  
+(eg. SO2, PM2.5, PM2...) in first 9 hrs,   
+and you have to predict the value of   
+PM2.5 in the 10th hr.  
+
+# Gradient  
+
+* What is gradient descent?  
     > Gradient descent is widely used in maching learning.  
     > The concept is find the gradient of loss, and then go backward.  
     > So, the loss can reach a local min, where may have a good result.  
@@ -38,3 +42,6 @@ This exercise is to show how use gradient to change weight
 * future work
     close form  
     validation    
+    The result of this is not good to reach the strong baseline since I didn't clean the data very well in this code.  
+    To improve, you may need to clean the data more carefully. The data is quite dirty. I almost delete 30% of data to  
+    reach strong baseline.
