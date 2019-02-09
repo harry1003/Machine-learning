@@ -6,7 +6,7 @@ class train_data_loader():
     def __init__(self, mean=0, std=1, normalize=True):
         self.mean = mean
         self.std = std
-        #load
+        # load
         train_data = pd.read_csv("./data/X_train", sep=',', header=0)
         train_data = np.array(train_data, dtype=float)
         label = pd.read_csv("./data/Y_train", sep=',', header=0)
@@ -32,12 +32,41 @@ class train_data_loader():
         self.feature_num = train_data.shape[1]
         self.train_data = train_data
         self.label = label
-        
+
     def get_all_data(self):
         return self.train_data, self.label
-            
+
     def shuffle(self, x, y):
         id = np.arange(len(x))
         id = np.random.shuffle(id)
         return x[id], y[id]
 
+
+class test_data_loader():
+    def __init__(self, mean=0, std=1, normalize=True):
+        self.mean = mean
+        self.std = std
+        # load
+        data = pd.read_csv("./data/X_test", sep=',', header=0)
+        data = np.array(data, dtype=float)
+
+        # normalize
+        if normalize:
+            t_d = data.T
+            mean = np.mean(t_d, axis=1)
+            std = np.std(t_d, axis=1)
+            for i in range(len(t_d)):
+                if std[i] == 0:
+                    t_d[i] = (t_d[i] - mean[i])
+                else:
+                    t_d[i] = (t_d[i] - mean[i]) / std[i]
+            data = t_d.T
+        # add bias
+        self.data_size = len(data)
+        bias = np.ones((self.data_size, 1))
+        data = np.concatenate((bias, data), axis=1)
+        self.feature_num = data.shape[1]
+        self.data = data
+
+    def get_all_data(self):
+        return self.data
