@@ -10,14 +10,11 @@ weight in the model.
         python predict.py
 
 ## Task description
-This task is to predict PM2.5 value.   
-We will give you the value of some features  
-(eg. SO2, PM2.5, PM2...) in first 9 hrs,   
-and you have to predict the value of   
-PM2.5 in the 10th hr.  
+        This task is to predict PM2.5 value. We will give you the value of some features  
+        (eg. SO2, PM2.5, PM2...) in first 9 hrs, and you have to predict the value of   
+        PM2.5 in the 10th hr. 
 
 ## Gradient  
-
 * What is gradient descent?  
     > Gradient descent is widely used in maching learning.  
     > The concept is find the gradient of loss, and then go backward.  
@@ -41,8 +38,8 @@ PM2.5 in the 10th hr.
         If your lr is too big, loss will diverge.  
 
 ## future work    
-    close form    
-    validation     
-    The result of this is not good to reach the strong baseline since I didn't clean the data very well in this code.  
+    1. close form    
+    2. validation     
+    3. The result of this is not good to reach the strong baseline since I didn't clean the data very well in this code.  
     To improve, you may need to clean the data more carefully. The data is quite dirty. I almost delete 30% of data to  
     reach strong baseline.
