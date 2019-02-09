@@ -14,13 +14,12 @@ weight in the model.
         (eg. SO2, PM2.5, PM2...) in first 9 hrs, and you have to predict the value of   
         PM2.5 in the 10th hr. 
 
-## Gradient  
-* What is gradient descent?  
-    > Gradient descent is widely used in maching learning.   
-    > The concept is find the gradient of loss, and then go backward.   
-    > So, the loss can reach a local min, where may have a good result.   
+## Gradient Descent
+        Gradient descent is widely used in maching learning.   
+        The concept is find the gradient of loss, and then go backward.   
+        So, the loss can reach a local min, where may have a good result.   
     
-    In this example, we just use one layer weight to try to predict PM2.5.  
+* In this example, we just use one layer weight to try to predict PM2.5.  
     We define   
     
         loss = (question * w - answer) ** 2, 
@@ -30,6 +29,7 @@ weight in the model.
     To find the min of the loss, we just upgrade weight  
     
         w = w - grad * lr.
+
 ## useful trick    
     Some tricks is used in this work.   
     1. We normalize the value of the input so that it can converge more faster.  
