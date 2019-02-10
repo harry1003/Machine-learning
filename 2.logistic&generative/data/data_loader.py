@@ -3,7 +3,7 @@ import numpy as np
 
 
 class train_data_loader():
-    def __init__(self, mean=0, std=1, normalize=True):
+    def __init__(self, mean=0, std=1, normalize=True, bias=True):
         self.mean = mean
         self.std = std
         # load
@@ -26,9 +26,12 @@ class train_data_loader():
             for i in range(len(t_d)):
                 t_d[i] = (t_d[i] - mean[i]) / std[i]
             train_data = t_d.T
-        # add bias
-        bias = np.ones((self.data_size, 1))
-        train_data = np.concatenate((bias, train_data), axis=1)
+
+        if bias:
+            # add bias
+            bias = np.ones((self.data_size, 1))
+            train_data = np.concatenate((bias, train_data), axis=1)
+
         self.feature_num = train_data.shape[1]
         self.train_data = train_data
         self.label = label
@@ -43,7 +46,7 @@ class train_data_loader():
 
 
 class test_data_loader():
-    def __init__(self, mean=0, std=1, normalize=True):
+    def __init__(self, mean=0, std=1, normalize=True, bias=True):
         self.mean = mean
         self.std = std
         # load
@@ -62,9 +65,10 @@ class test_data_loader():
                     t_d[i] = (t_d[i] - mean[i]) / std[i]
             data = t_d.T
         # add bias
-        self.data_size = len(data)
-        bias = np.ones((self.data_size, 1))
-        data = np.concatenate((bias, data), axis=1)
+        if bias:
+            bias = np.ones((self.data_size, 1))
+            data = np.concatenate((bias, data), axis=1)
+
         self.feature_num = data.shape[1]
         self.data = data
 

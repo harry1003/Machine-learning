@@ -15,7 +15,7 @@ def predict():
     for i in range(len(pre)):
         print("id:", i, pre[i])
     # save file
-    with open("./result/predict.csv", "w") as csvfile: 
+    with open("./result/predict.csv", "w") as csvfile:
         writer = csv.writer(csvfile)      
         writer.writerow(["id", "value"])
         for i in range(len(pre)):
