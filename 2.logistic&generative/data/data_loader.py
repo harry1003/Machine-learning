@@ -66,6 +66,7 @@ class test_data_loader():
             data = t_d.T
         # add bias
         if bias:
+            self.data_size = len(data)
             bias = np.ones((self.data_size, 1))
             data = np.concatenate((bias, data), axis=1)
 
