@@ -73,9 +73,12 @@ Model to make a classifier.
     
         w = w - grad * lr.
         
-* useful trick   
+## useful trick   
     Some tricks is used in this work.  
     1. We normalize the value of the input so that it can converge more faster.  
     2. When applying sigmoid, you have to clip the value or it will diverge.  
+    3. In generative model, we share the simga of every classes which decreases the  
+        parameter and improves the performance.
+
 * future work    
     adagrad  
