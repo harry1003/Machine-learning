@@ -47,20 +47,17 @@ Model to make a classifier.
         For the detail of derivation, see https://www.youtube.com/watch?v=fZAZUYEeIMg.
 
 ## Logistic Regression
-        What is logistic? Very similiar with task in (1.gradient).    
-        But, this time we are going to predict a probability(0-1).    
-        To transform the output from R->(0-1) we add a sigmoid function   
-        to it, just define at below.   
-    
-        sig(z) = 1 / (1 + np.exp(-z))
-    > After the transform, we can use the tech in (1.gradient) to change   
-    > the weight.(output and label's value are in range(0-1))
-    
-    In this example, we just use one layer weight to try to predict. We use     
-    gradient desent again, so that      
-    We define 2 kind of loss, MSE and Cross_entrophy.   
+        What is logistic regression? You can see that at the end of generative
+        model, we get 
+                prob = sigmoid(np.dot(test_x, w) + b)
+        so, we can just use gradient descent to get a better w and b in order to minumize 
+        the loss. Which is very similiar with what we do in 1.gradient. But, this time we 
+        are going to predict a probability(0-1) but not a real number.  
+ 
+* loss function
+   
+        We define 2 kind of loss, MSE and Cross_entrophy.
         
-        pre = sig(data * w)    
     > for MSE:    
         
         loss = (pre - lable) ** 2, 
@@ -71,9 +68,11 @@ Model to make a classifier.
         loss = -1 * (label * log(pre) + (1 - label) * np.log(1 - pre))
         d_pre = d(pre)/dw = d(sig(data * w))/dw = pre * (1 - pre) * data
         grad = -1 * (label / pre * d_pre - (1 - label) / (1 - pre) * d_pre)
+
     To find the min of the loss, we just upgrade weight  
     
         w = w - grad * lr.
+        
 * useful trick   
     Some tricks is used in this work.  
     1. We normalize the value of the input so that it can converge more faster.  
